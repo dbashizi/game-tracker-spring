@@ -1,0 +1,64 @@
+
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script>
+    <link href="css/tiy-styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div id="logo-div">
+    <img src="https://www.theironyard.com/etc/designs/theironyard/icons/iron-yard-logo.svg"/>
+</div>
+
+<div id="login-div">
+Welcome, hello!
+<form action="http://localhost:8080/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+</div>
+
+<a href="http://localhost:8080/">All</a>
+<a href="http://localhost:8080/?genre=adventure">Adventure</a>
+<a href="http://localhost:8080/?genre=rpg">RPG</a>
+<a href="http://localhost:8080/?genre=strategy">Strategy</a>
+<a href="http://localhost:8080/?genre=shooter">Shooter</a>
+
+<br><br>
+
+<form action="http://localhost:8080/searchByName" method="get">
+    <input type="text" placeholder="Search" name="search">
+    <button type="submit">Search</button>
+</form>
+
+<br><br>
+
+<form action="http://localhost:8080/add-game" method="post">
+    <input type="text" placeholder="Name" name="gameName">
+    <select name="gameGenre">
+        <option selected="" disabled="">Genre</option>
+        <option value="adventure">Adventure</option>
+        <option value="rpg">RPG</option>
+        <option value="strategy">Strategy</option>
+        <option value="shooter">Shooter</option>
+    </select>
+    <select name="gamePlatform">
+        <option selected="" disabled="">Platform</option>
+        <option value="pc">PC</option>
+        <option value="ps4">PS4</option>
+        <option value="xbone">XBox One</option>
+        <option value="wiiu">Wii U</option>
+    </select>
+    <input type="number" placeholder="Release Year" name="gameYear">
+    <button type="submit">Add Game</button>
+</form>
+
+<ol>
+    <li>Duke Nukem pc 1992 <a href="http://localhost:8080/delete?gameID=6">delete</a> <a href="http://localhost:8080/toggle?gameID=6">toggle</a></li>
+    <li>FIFA World Cup xbone 2010 <a href="http://localhost:8080/delete?gameID=7">delete</a> <a href="http://localhost:8080/toggle?gameID=7">toggle</a></li>
+    <li>Adele Games pc 2016 <a href="http://localhost:8080/delete?gameID=8">delete</a> <a href="http://localhost:8080/toggle?gameID=8">toggle</a></li>
+</ol>
+
+
+
+</body></html>

@@ -1,0 +1,57 @@
+body {
+    background-color: silver;
+    padding: 10px;
+}
+
+#login-div {
+    /* background-color: red; */
+    text-align: right;
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 1px solid black;
+}
+
+#logo-div {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    transition: transform .5s ease;
+}
+
+@keyframes spin {
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+#logo-div:hover {
+    animation: spin 4s linear infinite;
+}
+
+
+ol {
+    background-color: #3399ff;
+    padding: 20px;
+}
+
+ol li {
+    background: #cce5ff;
+    padding: 5px;
+    margin-left: 35px;
+}
+
+ol li::before {
+    content: " -> ";
+}
+
+a {
+    color: navy;
+    transition: color .5s ease;
+}
+
+a:hover {
+    color: #3399ff;
+}
