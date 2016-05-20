@@ -43,9 +43,17 @@ public class GameTrackerController {
         return "redirect:/";
     }
 
+    @RequestMapping(path = "/games", method = RequestMethod.GET)
+    public String games(Model model, HttpSession session) {
+        return "games";
+    }
+
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(Model model, HttpSession session, String genre, Integer releaseYear) {
-        setSessionAttribute(model, session);
+//        setSessionAttribute(model, session);
+        if (session.getAttribute("user") != null) {
+            model.addAttribute("user", session.getAttribute("user"));
+        }
 
         List<Game> gameList = new ArrayList<Game>();
         if (genre != null) {

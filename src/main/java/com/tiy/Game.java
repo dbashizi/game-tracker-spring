@@ -1,6 +1,7 @@
 package com.tiy;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by localdom on 5/17/2016.
@@ -27,7 +28,30 @@ public class Game {
     @Column(nullable = false)
     int releaseYear;
 
+    @ManyToMany
+    private Collection<GamingFormat> gamingFormats;
+
+    public Collection<GamingFormat> getGamingFormats() {
+        return gamingFormats;
+    }
+
+    public void setGamingFormats(Collection<GamingFormat> gamingFormats) {
+        this.gamingFormats = gamingFormats;
+    }
+
     public Game() {
+    }
+
+    @Override
+    public String toString() {
+        String returnString = "name = " + name + "\n";
+        returnString += "genre = " + genre + "\n";
+        returnString += "releaseYear = " + releaseYear + "\n";
+        if (user != null) {
+            returnString += "user = " + user.getName() + "\n";
+        }
+
+        return returnString;
     }
 
     public Game(String name, String platform, String genre, int releaseYear, User user) {
