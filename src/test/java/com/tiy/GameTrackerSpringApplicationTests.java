@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -101,10 +102,54 @@ public class GameTrackerSpringApplicationTests {
 		assertNotNull(retrievedGame);
 		assertNotNull(retrievedGame.getGamingFormats());
 
+		games.delete(testGame);
 		gamingFormatRepo.delete(format1);
 		gamingFormatRepo.delete(format2);
 		users.delete(testUser);
-		games.delete(testGame);
 	}
 
+	@Test
+	public void deleteEverything() {
+		games.deleteAll();
+		gamingFormatRepo.deleteAll();
+		users.deleteAll();
+	}
+
+	@Test
+	public void testFindByGameFormat() {
+		GamingFormat format1 = new GamingFormat("format1");
+		GamingFormat format2= new GamingFormat("format2");
+		gamingFormatRepo.save(format1);
+		gamingFormatRepo.save(format2);
+
+		User testUser = new User("formatTester", "password");
+		users.save(testUser);
+
+		Game testGame = new Game("Test Game", "Test Platform", "Test Genre", 1998, testUser);
+
+		ArrayList<GamingFormat> gamingFormats = new ArrayList<GamingFormat>();
+		gamingFormats.add(format1);
+		gamingFormats.add(format2);
+
+		testGame.setGamingFormats(gamingFormats);
+
+		games.save(testGame);
+
+		int gameId = testGame.getId();
+		assertNotEquals(0, gameId);
+
+		Game retrievedGame = games.findOne(gameId);
+		assertNotNull(retrievedGame);
+		assertNotNull(retrievedGame.getGamingFormats());
+
+		// test searching by gaming format
+		List<Game> foundGames = games.findByGamingFormats(gamingFormats);
+		assertNotNull(foundGames);
+		assertEquals(2, foundGames.size());
+		
+		games.delete(testGame);
+		gamingFormatRepo.delete(format1);
+		gamingFormatRepo.delete(format2);
+		users.delete(testUser);
+	}
 }
