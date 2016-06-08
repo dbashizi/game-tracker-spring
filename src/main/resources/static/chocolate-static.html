@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="TIYAngularApp">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/tiy-ng-controller.js"></script>
+<link href="css/tiy-styles.css" rel="stylesheet" type="text/css"/>
+<body ng-controller="ChocolateController">
+
+<div id="main-title-div">
+	<h1>Welcome to your Chocolate Factory</h1>
+</div>
+
+<div id="left-container">
+	<h2>Let us know how much cholocate you have in your factory</h2>
+	<span class="user-input">Number of big bars (5 kilos each): <input type="text" ng-model="chocolateRequest.bigs"/></span>
+	<span class="user-input">Number of small bars (1 kilo each): <input type="text" ng-model="chocolateRequest.smalls"/></span>
+	<div class="spacer"></div>
+	<h2>How much chocolate are you trying to make?</h2>
+	<span>Kilos of chocolate: <input type="text" ng-model="chocolateRequest.kilos"/></span>
+
+	<div class="spacer"></div>
+	<div class="spacer">
+		<input type="button" class="button" ng-click="getChocolateSolution()" value="Make Chocolate!"/>
+		<input type="button" class="button" ng-click="hardcodedSolution()" value="Cheat!"/>
+	</div>
+
+</div>
+
+<div id="right-container">
+	<h2 ng-if="chocolateRequest.bigs == 0 && chocolateRequest.smalls == 0">Your factory is empty :-(</h2>
+	<h2 ng-if="chocolateRequest.bigs != 0 || chocolateRequest.smalls != 0">Here is your inventory: </h2>
+	<div ng-repeat="chocIndex in makeArray(chocolateRequest.bigs)">
+		<div class="choc-big-bar">{{chocIndex + 1}}</div>
+	</div>
+	<div ng-repeat="chocIndex in makeArray(chocolateRequest.smalls)">
+		<div class="choc-small-bar">{{chocIndex + 1}}</div>
+	</div>
+
+	<div id="processing-div" ng-if="processing"></div>
+
+	<div class="solution-container" ng-if="chocolateSolution.hasSolution">
+		<h2>You used {{numBigs}} bigs and {{numSmalls}} smalls: </h2>
+		<div ng-repeat="chocIndex in makeArray(chocolateSolution.bigs)">
+			<div class="choc-big-bar">{{chocIndex + 1}}</div>
+		</div>
+		<div ng-repeat="chocIndex in makeArray(chocolateSolution.smalls)">
+			<div class="choc-small-bar">{{chocIndex + 1}}</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -33,7 +33,20 @@ public class GameTrackerJSONController {
         return getAllGames();
     }
 
+    @RequestMapping(path = "/getChocolateSolution.json", method = RequestMethod.POST)
+    public ChocolateSolution getChocolateSolution(HttpSession session, @RequestBody ChocolateRequest chocolateRequest) throws Exception {
+        User user = (User)session.getAttribute("user");
 
+        System.out.println("Chocolate Request::");
+        System.out.println(chocolateRequest);
+
+        ChocolateSolution solution = new CodingBatExercises().
+                                        makeChocolate(chocolateRequest.smalls,
+                                                      chocolateRequest.bigs,
+                                                      chocolateRequest.kilos);
+
+        return solution;
+    }
 
     @RequestMapping(path = "/games.json", method = RequestMethod.GET)
     public ArrayList<Game> getGames() {

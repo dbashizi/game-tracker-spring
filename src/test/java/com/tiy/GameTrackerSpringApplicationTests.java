@@ -12,8 +12,6 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = GameTrackerSpringApplication.class)
 @WebAppConfiguration
@@ -146,7 +144,7 @@ public class GameTrackerSpringApplicationTests {
 		List<Game> foundGames = games.findByGamingFormats(gamingFormats);
 		assertNotNull(foundGames);
 		assertEquals(2, foundGames.size());
-		
+
 		games.delete(testGame);
 		gamingFormatRepo.delete(format1);
 		gamingFormatRepo.delete(format2);

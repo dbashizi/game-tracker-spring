@@ -3,14 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<!-- Specify the information that other projects will be able
+	     to find our project by -->
 	<groupId>com.tiy</groupId>
 	<artifactId>GameTrackerSpring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
+	<!-- General project information -->
 	<name>GameTrackerSpring</name>
 	<description>Demo project for Spring Boot</description>
 
+	<!-- Allows us to inherit some properties from this module -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,11 +22,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<!-- Specify properties specific to this project -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<start-class>com.tiy.GameTrackerSpringApplication</start-class>
 	</properties>
 
+	<!-- This is where we define all the modules that this project
+	     is dependent on, so that Maven can download them for us -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,8 +64,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache-extras.beanshell</groupId>
+			<artifactId>bsh</artifactId>
+			<version>2.0b6</version>
+		</dependency>
 	</dependencies>
-	
+
+	<!-- Optional plugins that can be used during the build -->
 	<build>
 		<plugins>
 			<plugin>

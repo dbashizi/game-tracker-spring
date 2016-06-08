@@ -1,6 +1,85 @@
 body {
-    background-color: silver;
+    background-color: #DDD;
     padding: 10px;
+}
+
+.button {
+    background-color: #0099ff; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#main-title-div {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+#left-container {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    height: 500px;
+}
+
+#right-container {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    height: 500px;
+}
+
+.spacer {
+    height: 30px;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+.solution-container {
+    width: 100%;
+    float: left;
+}
+
+.user-input {
+    float: left;
+    width: 100%;
+    padding: 5px;
+}
+
+.choc-big-bar {
+    float: left;
+    width: 50px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 40px;
+    text-align: center;
+    background-color: brown;
+    margin: 5px;
+}
+
+.choc-small-bar {
+    float: left;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background-color: blue;
+    margin: 5px;
+    color: white;
 }
 
 #login-div {
@@ -9,6 +88,16 @@ body {
     padding: 10px;
     margin: 10px;
     border-bottom: 1px solid black;
+}
+
+#processing-div {
+    background-image: url("http://www.customizzare.com/wp-content/uploads/2014/09/order-processing-icon.png");
+    width: 500px;
+    height: 333px;
+    float: left;
+    transition: transform .5s ease;
+    animation: spin 4s linear infinite;
+    align: center;
 }
 
 #logo-div {

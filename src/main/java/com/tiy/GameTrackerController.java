@@ -48,6 +48,11 @@ public class GameTrackerController {
         return "games";
     }
 
+    @RequestMapping(path = "/chocolate", method = RequestMethod.GET)
+    public String chocolate(Model model, HttpSession session) {
+        return "chocolate";
+    }
+
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(Model model, HttpSession session, String genre, Integer releaseYear) {
 //        setSessionAttribute(model, session);
