@@ -1,5 +1,6 @@
 package com.tiy;
 
+/*
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+*/
 
 import java.net.URL;
 import java.util.Scanner;
@@ -14,7 +16,7 @@ import java.util.Scanner;
 /**
  * Created by localdom on 5/26/2016.
  */
-public class ChocolateRunner extends Application {
+public class ChocolateRunner /* extends Application */ {
 
     public static void main(String[] args) {
         System.out.println("ChocoloateRunner running ...");
@@ -107,6 +109,8 @@ public class ChocolateRunner extends Application {
         System.out.println(fullLineBuilder.toString());
     }
 
+    /*
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -127,5 +131,6 @@ public class ChocolateRunner extends Application {
 
         primaryStage.show();
     }
+    */
 
 }
