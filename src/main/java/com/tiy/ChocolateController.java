@@ -1,5 +1,6 @@
 package com.tiy;
 
+/*
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -14,12 +15,13 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+*/
 
 /**
  * Created by localdom on 5/26/2016.
  */
-public class ChocolateController implements Initializable {
-
+public class ChocolateController /* implements Initializable */ {
+/*
     @FXML
     Canvas chocolateCanvas;
 
@@ -47,5 +49,5 @@ public class ChocolateController implements Initializable {
         timeline.play();
 
     }
-
+*/
 }
