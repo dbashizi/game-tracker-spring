@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* com.tiy.GameTrackerSpringApplication
+web: java -Dserver.port=8080 -jar  target/GameTrackerSpring-0.0.1-SNAPSHOT.jar
